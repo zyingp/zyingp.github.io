@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CryptoDisk</title>
+<link href="Crypto.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="Sidebar">
+<h2>加密盘</h2>
+<p></p>
+<ol>
+<li><a href="crypto.html">主页</a>
+<ol>
+<li><a href="#features">- 功能简介</a></li>
+<li><a href="#SecurityDiscussion">- TrueCrypt／VeraCrypt 安全性讨论</a></li>
+<li><a href="#FAQ">- FAQ</a></li>
+<li><a href="#references">- 参考文献</a></li>
+<li><a href="#contact">- 联系我们</a></li>
+<li><a href="#donation">- 捐赠</a></li>
+</ol>
+</li>
+<li><a href="EncryptProtection.html">加密保护功能</a></li>
+<li><a href="FileTransfer.html">文件传输功能</a></li>
+<li><a href="FileManage.html">文档管理功能</a></li>
+<li><a href="Cloud.html">云功能</a></li>
+</ol>
+</div>
+<div class="mainWindow">
+<h4><a href="crypto-en.html">English</a></h4>
+<h2>主页</h2>
+<div class="imgHead">
+<img class="cryptoimg" src="AppIcon.png" align="left"/>
+<span>本页面为加密盘的使用提供指南；<br />
+此应用主要提供加密保护，文件传输，文档管理，云等服务；<br />
+此应用版权归曾英佩所有；<br />
+目前更新版本至V2.4.9。
+</span>
+</div>
+<div name="download">
+<form>
+<button><a href="https://appsto.re/cn/_LfL4.i">到苹果商店购买此App</a></button>
+</form>
+</div>
+<div id="features">
+<h3>功能简介</h3>
+<span>
+本应用提供加密保护，文件传输（不同设备之间），文档管理，云等功能。<br />
+- 加密保护采用TrueCrypt（及其继任者VeraCrypt）加密格式，提供三个层级的加密保护；<br />
+- 文件传输支持iTune/ HTTP/ FTP（通过WiFi）/ AirDrop传输（通过WiFi和蓝牙）；<br />
+- 文档管理指文件可在App内进行查看、复制、删除、压缩等操作；<br />
+- 云支持从iCloud/ Dropbox/ Box等云导入文件。
+</span>
+</div>
+<div id="SecurityDiscussion">
+<h3>TrueCrypt／VeraCrypt 安全性讨论</h3>
+<span>
+我们认为TrueCrypt／VeraCrypt加密格式是安全的，这是基于以下原因：<br />
+- 基于TrueCrypt加密格式的加密软件TrueCrypt是一个有十年历史的、全球流行的开源软件，并且在2014，和2015年的第三方审计结果中没有发现任何后门或严重的问题 （2013年开始的审计）[1][5]。<br />
+- 安全专家们没有发现加密格式设计有数学问题[2]。<br />
+- 维基上有两例报道指出巴西国际犯罪研究所（INC）和美国联邦调查局（FBI）均没有从TrueCrypt加密盘中破解出数据[4] （注意：我们并不是鼓励对抗政府部门更不是鼓励犯罪）。<br />
+- TrueCrypt官方2014年5月24日宣布不再维护其桌面软件，引发了大量讨论[3]。但是停止维护的原因并不是因其格式不安全，而只是维护人员“不再对维护该软件有兴趣”[4]。<br />
+- VeraCrypt是TrueCrypt的衍生版本，并且解决了一些TrueCrypt的问题。最大的改变是增加了密钥生成算法的迭代次数（iteration count of key derivation algorithm，这也使得它与TrueCrypt格式不兼容）。［6］
+<br />
+- 我们将持续关注可能出现的与TrueCrypt格式和TrueCrypt代码相关的问题并及时做出应对以保证用户数据安全。<br />
+</span>
+</div>
+<div id="FAQ">
+<h3>FAQ</h3>
+<span>
+- 本软件v2.4.7及之后版本用户在打开加密盘时可以选择是否存储或只为非隐藏盘存储加密盘密码到设备Touch ID硬件保护的钥匙串(Keychain)中（v2.4.6及之前版本不会存储任何形式的——比如加密过或者散列过的——加密盘的密码）。设备的Touch ID与另一个叫Secure Enclave的协处理器一起配合，可以使得只有符合要求的指纹才能获取到它保护的钥匙串中的密码[7]。<br />
+我们保存密码时选择的是iOS系统提供的最安全的设置，包括：<br />
+a．TouchIDCurrentSet设置——意为着只有当前设置的指纹集中的指纹才能获取保存的密码，如果指纹集有增加或者删除，所有保存的密码都无法再被获取，而且只有用指纹而不能用设备访问密码(Device Passcode)来获取密码。<br />
+b．WhenUnlockedThisDeviceOnly设置——意味着密码只会保存在当前设备，无法备份恢复到其它设备（“Keychain Data Protection”小节，第14页，［7］）。注意本功能启用需要iOS 9 及Touch ID。<br />
+- 本应用的访问密码与加密盘文件的密码不同。访问密码是进入本应用时要求输入的密码（如果启用访问密码的话），而加密盘密码则是进入本应用后，打开加密盘文件时要求输入的密码。使用两重密码也是逐层防御（defend-in-depth）思想的一种体现。并且，本应用在3次失败登陆后会禁止登陆半小时，这样可以使暴力破解访问密码变得很难。<br />
+- 在打开加密盘内的视频音频文件时，我们会先将它们拷贝到缓存目录，但是在退出播放时我们会自动删除拷贝出的文件。<br />
+- 在本应用的浏览历史文件中我们只会存储经过SHA－512散列处理（已加盐）的文件路径，不会暴露其中文件名等敏感信息。 <br />
+</span>
+</div>
+<div id="references">
+<h3>参考文献</h3>
+<span>
+[1] TrueCrypt audit finds “no evidence of backdoors” or malicious code, http://arstechnica.com/security/2014/04/truecrypt-audit-finds-no-evidence-of-backdoors-or-malicious-code/<br />
+[2] Alexei Czeskis, David J. St. Hilaire, Karl Koscher, Steven D. Gribble, Tadayoshi Kohno, and Bruce Schneier, Defeating Encrypted and Deniable File Systems: TrueCrypt v5. 1a and the Case of the Tattling OS and Applications. HotSec, 2008<br />
+[3] Bombshell TrueCrypt advisory: Backdoor? Hack? Hoax? None of the above? http://arstechnica.com/security/2014/05/bombshell-truecrypt-advisory-backdoor-hack-hoax-none-of-the-above/<br />
+[4] http://en.wikipedia.org/wiki/TrueCrypt  Retrieved 2014-05-31<br />
+[5] Open Crypto Audit,TrueCrypt Phase II, 2015-04-02 <br />
+[6] VeraCrypt forum discussion: Why is this more secure than TrueCrypt? https://veracrypt.codeplex.com/discussions/569777#PostContent_1313325 Retrieved 2014-06-22<br />
+[7] Apple, “iOS Security”, May 2016, https://www.apple.com/business/docs/iOS_Security_Guide.pdf
+</span>
+</div>
+<div id="contact">
+<h3>联系我们</h3>
+<span class="mail"><a href="mailto:cryptodisksoft@gmail.com">cryptodisksoft@gmail.com</a></span>
+</div>
+<div id="donation">
+<h3>捐赠</h3>
+<span>...</span>
+</div>
+</div>
+</body>
+</html>

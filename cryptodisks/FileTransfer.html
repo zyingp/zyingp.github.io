@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FileTransfer</title>
+<link href="Crypto.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="Sidebar">
+<h2>加密盘</h2>
+<p></p>
+<ol>
+<li><a href="crypto.html">主页</a>
+<ol>
+<li><a href="crypto.html#features">- 功能简介</a></li>
+<li><a href="crypto.html#SecurityDiscussion">- TrueCrypt／VeraCrypt 安全性讨论</a></li>
+<li><a href="crypto.html#FAQ">- FAQ</a></li>
+<li><a href="crypto.html#references">- 参考文献</a></li>
+<li><a href="crypto.html#contact">- 联系我们</a></li>
+<li><a href="crypto.html#donation">- 捐赠</a></li>
+</ol>
+</li>
+<li><a href="EncryptProtection.html">加密保护功能</a></li>
+<li><a href="FileTransfer.html">文件传输功能</a></li>
+<li><a href="FileManage.html">文档管理功能</a></li>
+<li><a href="Cloud.html">云功能</a></li>
+</ol>
+</div>
+<div class="mainWindow">
+<h2>文件传输</h2>
+<div name="feature-filetransfer">
+<span>
+除了支持一般iTune文件传输（具体步骤参见http://support.apple.com/kb/PH12318）外，还支持HTTP/FTP传输（通过WiFi）和AirDrop传输（通过WiFi和蓝牙）。<br />
+- HTTP传输。它不要求在另一方（PC或者手机）额外安装任何软件，只需要网络浏览器（如Chrome，Safari，IE）即可。首先，你需要在加密盘应用内开启HTTP服务器，然后，你在另一方打开浏览器输入HTTP服务器地址，接着，你即可以在进入的网页上传或下载文件了。<br />
+<img src="http.png"/>
+<br />
+- FTP传输。支持批量（大）文件传输。它在本应用中有两种用法：<br />
+a. 让本设备变成一个FTP服务器，其它设备如个人电脑通过FTP客户端（如FileZilla，可到https://filezilla-project.org下载，Windows上的资源管理器也可以用但是没FilleZilla那么强大如支持断点续传）连接本设备。<br />
+<img src="ftp.png"/><br />
+b. 另一种FTP传输方式是本设备作为客户端，去连接其它设备的FTP服务器。使用第一种用法请在侧边栏开启FTP服务器，然后在其它设备的FTP客户端输入开启按钮下面显示的地址进行连接。使用第二种用法请点击侧边栏的“连接FTP服务器”按钮，在弹出框中输入相应信息后连接，然后进入选择模式选择要下载文件后点击下载，文件将会被下载到主界面当前浏览的目录下。
+<br />
+<img src="ftpclient.png"/><br />
+<br />
+- AirDrop传输。在较新的苹果设备上（iPhone/iPod 5及以上，iPad 4及以上，iPad mini及以上）可用，一次传输一个文件。请通过在要传输的文件上长按并选择“在其他应用里打开”或者打开该文件后点击右上角的操作按钮来调出AirDrop菜单。<br />
+</span>
+</div>
+</div>
+</body>
+</html>
+

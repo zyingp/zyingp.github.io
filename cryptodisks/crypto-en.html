@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CryptoDisk</title>
+<link href="Crypto-en.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="Sidebar">
+<h2>Crypto Disk</h2>
+<p></p>
+<ol>
+<li><a href="crypto-en.html">Home</a>
+<ol>
+<li><a href="#features">- Introduction</a></li>
+<li><a href="#SecurityDiscussion">- TrueCrypt／VeraCrypt Security Discussions</a></li>
+<li><a href="#FAQ">- FAQ</a></li>
+<li><a href="#references">- Reference</a></li>
+<li><a href="#contact">- Contact Us</a></li>
+<li><a href="#donation">- Donation</a></li>
+</ol>
+</li>
+<li><a href="EncryptProtection-en.html">Encryption</a></li>
+<li><a href="FileTransfer-en.html">File Transfer</a></li>
+<li><a href="FileManage-en.html">File Management</a></li>
+<li><a href="Cloud-en.html">Cloud</a></li>
+</ol>
+</div>
+<div class="mainWindow">
+<h4><a href="crypto.html">中文</a></h4>
+<h2>Home</h2>
+<div class="imgHead">
+<img class="cryptoimg" src="AppIcon-en.png" align="left"/>
+<span>This is the Guideline page for Crypto Disk.<br />
+Main functions include encryption, file transfer, file management and cloud.<br />
+Crypto Disk copyright reserved to Yingpei Zeng.<br />
+</span>
+</div>
+<div name="download">
+<form>
+<button><a href="https://appsto.re/cn/_LfL4.i">Buy it in App Store</a></button>
+</form>
+</div>
+<div id="features">
+<h3>Features Introduction</h3>
+<span>
+The app is featured by encryption, file transfer, file management and cloud:<br />
+- <a href="EncryptProtection-en.html">Encryptions </a> base on TrueCrypt (and its successor VeraCrypt) virtual disk encryption format, by which we provide three levels of protection.<br />
+- <a href="FileTransfer-en.html">File transfer </a> supports iTune/ HTTP/ FTP(via WiFi)/ AirDrop(via WiFi or bluetooth);<br />
+- <a href="FileManage-en.html">File management</a> supports to edit(open, copy, delete, zip...) files within the app.<br />
+- <a href="Cloud-en.html">Cloud </a>supports to import files from iCloud/ Dropbox/ Box etc.
+</span>
+</div>
+<div id="SecurityDiscussion">
+<h3>TrueCrypt／VeraCrypt Security Discussions</h3>
+<span>
+We believe that the TrueCrypt/VeraCrypt format encrypted volume is secure, based on following reasons:<br />
+- The TrueCrypt desktop software base on TrueCrypt format, is a software that has 10-year history and is used all around the world. There was no backdoor or major problem identified in a 3rd party audit in 2014, and 2015 (audit started from 2013) [1],[5].<br />
+- Security scientists didn’t find any mathematical problems in TrueCrypt format [2].<br />
+- Two stories in wiki mentioned that both the Brazilian National Institute of Criminology (INC) and the Federal Bureau of Investigation (FBI) failed to access files in TrueCrypt encrypted volumes [4].  (Note we never mean to against governments, not even to protect criminals.)<br />
+- TrueCrypt officially announced that they would not maintain their desktop software on May 24, 2014, which triggered wide discussions [3]. However, the reason of stopping maintenance is not that the format is not secure. Instead, it is because the developers think "there is no longer interest [in maintaining the project]." [4] <br />
+- VeraCrypt is a fork of TrueCrypt, and fixed some potential problems of TrueCrypt. The most notable fix is the increase of iteration count of key derivation algorithm (which also makes it is not compatible with TrueCrypt format).[6]
+<br />
+- We will continue monitoring any problems related to TrueCrypt/VeraCrypt format and TrueCrypt/VeraCrypt software and respond as soon as possible to keep our users’ data secure. <br />
+</span>
+</div>
+<div id="FAQ">
+<h3>FAQ</h3>
+<span>
+- In v2.4.7 and later, the App offers a feature that user could choose whether to store the passwords of crypto disks or only the passwords of non-hidden crypto disks into the Keychain protected by device Touch ID hardware when opening disks (in v2.4.6 and before, it never stores the passwords of crypto disks in any form, e.g., encrypted or hashed forms). Touch ID, together with a coprocessor called Secure Enclave, can make that only valid fingerprints are able to retrieve the saved password in Keychain [7].<br />
+In addition, we choose the most secure settings iOS provides:<br />
+a. TouchIDCurrentSet setting, means that only fingerprints in current fingerprint set on the device can retrieve stored passwords, whenever the fingerprint set has any fingerprint addition or removal, all stored passwords cannot be retrieved. Also, only fingerprints but not the device passcode can retrieve stored passwords. <br />
+b. WhenUnlockedThisDeviceOnly setting, means that stored passwords are only be securely saved in this device, and cannot be backed up and restored to other devices (“Keychain Data Protection” subsection, page 14, [7]) . Note the feature require iOS 9 or later, and Touch ID.<br />
+- Note that the passcode of the App is different from the passwords of crypto disks. Passcode is needed when entering the App (if passcode is enabled); however, password is further needed when opening a crypto disk. It’s also a form of defend-in-depth. Also, the App denies any login for half an hour after 3 failed login attempts, to make brute-force passcode attack very hard.<br />
+- Now when you open videos and audios inside crypto disks, the App will first copy them to cache folder; however, after you end your playing, the App will automatically delete the copies.<br />
+- In the browsing history file of the App we store the hashed (sorted hash) file path , and adversary cannot recover sensitive information like file name.  <br />
+</span>
+</div>
+<div id="references">
+<h3>Reference</h3>
+<span>
+[1] TrueCrypt audit finds “no evidence of backdoors” or malicious code, http://arstechnica.com/security/2014/04/truecrypt-audit-finds-no-evidence-of-backdoors-or-malicious-code/<br />
+[2] Alexei Czeskis, David J. St. Hilaire, Karl Koscher, Steven D. Gribble, Tadayoshi Kohno, and Bruce Schneier, Defeating Encrypted and Deniable File Systems: TrueCrypt v5. 1a and the Case of the Tattling OS and Applications. HotSec, 2008<br />
+[3] Bombshell TrueCrypt advisory: Backdoor? Hack? Hoax? None of the above? http://arstechnica.com/security/2014/05/bombshell-truecrypt-advisory-backdoor-hack-hoax-none-of-the-above/<br />
+[4] http://en.wikipedia.org/wiki/TrueCrypt  Retrieved 2014-05-31<br />
+[5] Open Crypto Audit,TrueCrypt Phase II, 2015-04-02 <br />
+[6] VeraCrypt forum discussion: Why is this more secure than TrueCrypt? https://veracrypt.codeplex.com/discussions/569777#PostContent_1313325 Retrieved 2014-06-22<br />
+[7] Apple, “iOS Security”, May 2016, https://www.apple.com/business/docs/iOS_Security_Guide.pdf
+</span>
+</div>
+<div id="contact">
+<h3>Contact Us</h3>
+<span class="mail"><a href="mailto:cryptodisksoft@gmail.com">cryptodisksoft@gmail.com</a></span>
+</div>
+<div id="donation">
+<h3>Donation</h3>
+<span>...</span>
+</div>
+</div>
+</body>
+</html>
